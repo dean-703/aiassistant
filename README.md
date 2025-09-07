@@ -34,3 +34,9 @@ For any questions or comments, reach me at [dean703@gmail.com].
 #### AI Assistant OpenAI Desktop Client
 #### Version 1.0  "HyperLink"
 #### Dean Courtney
+
+[![Click for larger image](https://github.com/dean-703/aiassistant/blob/main/AIAssistantSmall.png)](https://github.com/dean-703/aiassistant/blob/main/AIAssistant.png)
+
+[![Click for larger image](https://github.com/dean-703/aiassistant/blob/main/ConversationManagerSmall.png)](https://github.com/dean-703/aiassistant/blob/main/ConversationManager.png)
+
+[![Click for larger image](https://github.com/dean-703/aiassistant/blob/main/ConfigurationSetttingsSmall.png)](https://github.com/dean-703/aiassistant/blob/main/ConfigurationSetttings.png)
