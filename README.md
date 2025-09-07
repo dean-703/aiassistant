@@ -12,7 +12,7 @@ AI Assistant is a JavaFX client for ChatGPT, designed to be a useful and versati
 - **HTML Export:** Export your conversation views as HTML.
 - **Useful Presets:** Handy presets to adjust as needed.
 
-Development Details
+### Development Details
 Made with IntelliJ IDEA, Maven, BellSoft Liberica JDK 21 with JavaFX, a lot of coffee and ChatGPT.
 
 Contributions are welcome! Please submit a pull request or open an issue to discuss enhancements and extensions.
@@ -20,17 +20,17 @@ Contributions are welcome! Please submit a pull request or open an issue to disc
 Customize any section to better fit your project or personal style.
 Post your changes back here to share. Please.
 
-License
+### License
 This project is licensed under the Apache License.
 
-Acknowledgments
+### Acknowledgments
 OpenAI for providing the ChatGPT API.
 JavaFX for the powerful UI framework.
 Open Source Software for giving me so much.
 
-Contact
+### Contact
 For any questions or comments, reach me at [dean703@gmail.com].
 
-AI Assistant OpenAI Desktop Client
-Version 1.0  "HyperLink"
-Dean Courtney
+#### AI Assistant OpenAI Desktop Client
+#### Version 1.0  "HyperLink"
+#### Dean Courtney
