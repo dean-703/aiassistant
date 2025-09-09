@@ -26,7 +26,7 @@ This project is licensed under the Apache License.
 ### Acknowledgments
 OpenAI for providing the ChatGPT API.
 JavaFX for the powerful UI framework.
-Open Source Software for giving me so much.
+Open Source Software for all the great code.
 
 ### Contact
 For any questions or comments, reach me at [dean703@gmail.com].
