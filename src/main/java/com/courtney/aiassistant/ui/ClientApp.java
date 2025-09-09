@@ -215,8 +215,23 @@ public class ClientApp extends BorderPane {
 
     public class LinkHandler {
         public void openLink(String adr) throws IOException {
-            new ProcessBuilder("xdg-open", adr).start();
-            //new ProcessBuilder(firefoxPath, adr).start();
+            String os = System.getProperty("os.name").toLowerCase();
+            try {
+                if (os.contains("win")) {
+                    // Windows
+                    new ProcessBuilder("rundll32", "url.dll,FileProtocolHandler", adr).start();
+                } else if (os.contains("mac")) {
+                    // macOS
+                    new ProcessBuilder("open", adr).start();
+                } else if (os.contains("nix") || os.contains("nux")) {
+                    // Unix or Linux
+                    new ProcessBuilder("xdg-open", adr).start();
+                } else {
+                    System.err.println("Unsupported operating system.");
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 
