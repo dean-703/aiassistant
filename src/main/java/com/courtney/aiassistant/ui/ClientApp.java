@@ -37,9 +37,6 @@ public class ClientApp extends BorderPane {
     private final MenuItem miDictionary = new MenuItem("Deutsch");
     private final MenuItem miHealthcare = new MenuItem("Healthcare");
     private final MenuItem miProgrammer = new MenuItem("Programmer");
-
-    private final MenuItem miAbout = new MenuItem("About");
-
     private final TextArea inputArea = new TextArea();
     private final WebView webView = new WebView();
     private final Label statusLeft = new Label("Ready");

@@ -116,7 +116,7 @@ public class ClientAppController {
         s.setModel("gpt-4o");
         s.setTemperature(0.1);
         s.setMaxTokens(4096);
-        s.setSystemPrompt("You are an expert Java and JavaFX engineer. Provide working code with comments, error handling and good programming practice.");
+        s.setSystemPrompt("You are an expert Java and JavaFX engineer. Assist the user with the issue presented and provide working code with comments, error handling and good programming practice when requested.");
         configService.setSettings(s);
         configService.save();
         configService.load();
