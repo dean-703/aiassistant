@@ -26,7 +26,7 @@ This project is licensed under the Apache License.
 ### Acknowledgments
 OpenAI for providing the ChatGPT API.
 JavaFX for the powerful UI framework.
-Open Source Software for giving me so much.
+Open Source Software for all the great code.
 
 ### Contact
 For any questions or comments, reach me at [dean703@gmail.com].
@@ -34,3 +34,11 @@ For any questions or comments, reach me at [dean703@gmail.com].
 #### AI Assistant OpenAI Desktop Client
 #### Version 1.0  "HyperLink"
 #### Dean Courtney
+
+#### Screenshots
+
+[![Click for larger image](https://github.com/dean-703/aiassistant/blob/main/AIAssistantSmall.png)](https://github.com/dean-703/aiassistant/blob/main/AIAssistant.png)
+
+[![Click for larger image](https://github.com/dean-703/aiassistant/blob/main/ConversationManagerSmall.png)](https://github.com/dean-703/aiassistant/blob/main/ConversationManager.png)
+
+[![Click for larger image](https://github.com/dean-703/aiassistant/blob/main/ConfigurationSetttingsSmall.png)](https://github.com/dean-703/aiassistant/blob/main/ConfigurationSetttings.png)
