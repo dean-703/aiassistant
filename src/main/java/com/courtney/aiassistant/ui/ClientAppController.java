@@ -2,6 +2,7 @@ package com.courtney.aiassistant.ui;
 
 import com.courtney.aiassistant.controller.ConfigController;
 import com.courtney.aiassistant.controller.ConversationController;
+import com.courtney.aiassistant.controller.Presets;
 import com.courtney.aiassistant.exception.ApiException;
 import com.courtney.aiassistant.model.AppSettings;
 import com.courtney.aiassistant.model.Conversation;
@@ -28,6 +29,7 @@ public class ClientAppController {
 
     private Stage stage;
     private ClientApp view;
+    private Presets presets;
 
     private ConfigService configService;
     private ConversationRepository conversationRepository;
@@ -53,6 +55,8 @@ public class ClientAppController {
         view = new ClientApp(this); // Pass the controller instance to the view
         stage.getIcons().add(new Image(getClass().getResourceAsStream("/chatgpt.png")));
         stage.setScene(view.createScene());
+
+        presets = new Presets(configService, stage);
 
         initWebView();
         bindActions();
@@ -95,10 +99,10 @@ public class ClientAppController {
         view.getMiExit().setOnAction(e -> stage.close());
         view.getMiConfig().setOnAction(e -> openConfigDialog());
         view.getMiBrowseConversations().setOnAction(e -> openConversationBrowser());
-        view.getMiAssistant().setOnAction(e -> setAssistant());
-        view.getMiDictionary().setOnAction(e -> setDictionary());
-        view.getMiHealthcare().setOnAction(e -> setMedical());
-        view.getMiProgrammer().setOnAction(e -> setProgrammer());
+        view.getMiAssistant().setOnAction(e -> presets.setAssistantMode());
+        view.getMiDictionary().setOnAction(e -> presets.setDictionaryMode());
+        view.getMiHealthcare().setOnAction(e -> presets.setMedicalMode());
+        view.getMiProgrammer().setOnAction(e -> presets.setProgrammerMode());
 
         // Ctrl+Enter to send
         stage.getScene().getAccelerators().put(
@@ -108,58 +112,6 @@ public class ClientAppController {
 
         // Update right status when settings change
         configService.settingsProperty().addListener((obs, oldV, newV) -> applyStatus());
-    }
-
-    private void setProgrammer() {
-        AppSettings s = new AppSettings();
-        s.setMode("Programmer");
-        s.setModel("gpt-4o");
-        s.setTemperature(0.1);
-        s.setMaxTokens(4096);
-        s.setSystemPrompt("You are an expert Java and JavaFX engineer. Assist the user with the issue presented and provide working code with comments, error handling and good programming practice when requested.");
-        configService.setSettings(s);
-        configService.save();
-        configService.load();
-        stage.setTitle("Programming Assistant");
-    }
-
-    private void setMedical() {
-        AppSettings s = new AppSettings();
-        s.setMode("Healthcare");
-        s.setModel("gpt-4o");
-        s.setTemperature(0.1);
-        s.setMaxTokens(1024);
-        s.setSystemPrompt("You are an expert healthcare professional. Explain the key features and symptoms, possible treatments, therapies, medications and contraindications and other relevant information for the health matter described by the user.");
-        configService.setSettings(s);
-        configService.save();
-        configService.load();
-        stage.setTitle("Healthcare Assistant");
-    }
-
-    private void setDictionary() {
-        AppSettings s = new AppSettings();
-        s.setMode("Deutsch");
-        s.setModel("gpt-4o-mini");
-        s.setTemperature(0.4);
-        s.setMaxTokens(1024);
-        s.setSystemPrompt("Sie sind ein deutschsprachiger Assistent. Übersetzen Sie englische Wörter, Ausdrücke und Texte ins Deutsche und erklären Sie deren Verwendung. Erklären Sie deutsche Texte auf Deutsch.");
-        configService.setSettings(s);
-        configService.save();
-        configService.load();
-        stage.setTitle("Deutsches Wörterbuch");
-    }
-
-    private void setAssistant() {
-        AppSettings s = new AppSettings();
-        s.setMode("Assistant");
-        s.setModel("gpt-4o-mini");
-        s.setTemperature(0.7);
-        s.setMaxTokens(1024);
-        s.setSystemPrompt("You are a helpful assistant.");
-        configService.setSettings(s);
-        configService.save();
-        configService.load();
-        stage.setTitle("AI Assistant");
     }
 
     private void applyStatus() {
