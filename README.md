@@ -15,10 +15,7 @@ AI Assistant is a JavaFX client for ChatGPT, designed to be a useful and versati
 ### Development Details
 Made with IntelliJ IDEA, Maven, BellSoft Liberica JDK 21 with JavaFX, a lot of coffee and ChatGPT.
 
-Contributions are welcome! Please submit a pull request or open an issue to discuss enhancements and extensions.
-
-Customize any section to better fit your project or personal style.
-Post your changes back here to share. Please.
+You can contribute to the project by letting me know what you do with the program.
 
 ### License
 This project is licensed under the Apache License.
